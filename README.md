@@ -1,16 +1,19 @@
-# Real-time Object Detection Web App
-This project is a web-based application that utilizes real-time object detection to identify and label objects within an image or video stream. It is built using Next.js, ONNXRuntime, and YOLOv7 model.
+# Real-time Object Detection & Translation Web App
+Authors: Tiffany Fu, Nicole Lucas, Sherie Lam, Edith Leung
 
-## Demo at [RTOD.vercel.app](https://rtod.vercel.app)
+This is a web app that could detect& identify object and provide translation in real-time. 
+It is built using Next.js, ONNXRuntime, and YOLOv7 model.
+
+<!-- ## Demo at [RTOD.vercel.app](https://rtod.vercel.app)
 <div align="center" >
   <video autoplay loop muted
   src="https://user-images.githubusercontent.com/44163987/211734752-e354b590-0f55-465a-b783-504ed55d3ed3.mp4" alt="demo.mp4" >
   </video>
-</div>
+</div> -->
 
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+How to run this project on your local machine for development and testing purposes.
 
 ### Prerequisites
 In order to run this project, you will need to have the following software installed on your machine:
@@ -19,17 +22,7 @@ In order to run this project, you will need to have the following software insta
 - A web browser 
 
 ### Installation
-1. Clone the repository to your local machine:
-```
-https://github.com/juanjaho/real-time-object-detection-web-app.git
-```
-
-2. Navigate to the project directory:
-```
-cd real-time-object-detection-web-app
-```
-
-3. Install the necessary dependencies by running:
+Install the necessary dependencies by running:
 ```
 npm install
 # or 
@@ -64,25 +57,11 @@ This project can be deployed to a web server for public access. For more informa
 - [Next.js](https://nextjs.org/) - A JavaScript framework for building server-rendered React applications.
 - [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) - A progressive web app that can be installed on a user's device and run offline, providing a native-like experience.
 
-## Contributing
-If you want to contribute to this project, please feel free to submit a pull request. Any contributions, big or small, are greatly appreciated!
+## Acknowledgement
+[@juanjaho](https://github.com/juanjaho) - original work by Juan Sebastian
+[@WongKinYiu](https://github.com/WongKinYiu) for creating such an amazing [YOLOv7](https://github.com/WongKinYiu/yolov7) model.
+[ONNXRuntime Web Demo](https://github.com/microsoft/onnxruntime-web-demo) on how to use ONNXRuntime in a web application.
 
-## Authors
-Juan Sebastian - Initial work - [@juanjaho](https://github.com/juanjaho)
-
-## License
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE.md) file for details.
-
-## Acknowledgments
-- Special thanks to [@WongKinYiu](https://github.com/WongKinYiu) for creating such an amazing [YOLOv7](https://github.com/WongKinYiu/yolov7) model.
-
-- Hats off to the ONNXRuntime team for making such a powerful tool accessible to developers.
-
-- Referenced [ONNXRuntime Web Demo](https://github.com/microsoft/onnxruntime-web-demo) for guidance on how to use ONNXRuntime in a web application.
-
-- Thank you to all the contributors to the open-source libraries used in this project.
-
-- Inspiration for this project was taken from my previous project [AnimeArcaneGAN_Mobile](https://github.com/juanjaho/AnimeArcaneGAN_Mobile)
 
 ## Citation for YOLOv7
 ```
