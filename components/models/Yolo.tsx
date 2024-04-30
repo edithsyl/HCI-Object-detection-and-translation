@@ -7,6 +7,7 @@ import { yoloClasses } from "../../data/yolo_classes";
 import { useState } from "react";
 import { useEffect } from "react";
 import { runModelUtils } from "../../utils";
+import { getTranslation } from '../../api/translation';
 
 const RES_TO_MODEL: [number[], string][] = [
   [[256,256], "yolov7-tiny_256x256.onnx"],
@@ -170,6 +171,8 @@ const Yolo = (props: any) => {
         yoloClasses[cls_id].toString().substring(1);
         // " " + score.toString() + "%"; // remove yolo percentage
 
+      const translated_label = await getTranslation(label, 'Chinese')
+
       // const color = conf2color(score / 100); 
       const color = `rgba(0,0,0,0.9)`;
 
@@ -178,7 +181,11 @@ const Yolo = (props: any) => {
       ctx.strokeRect(x0, y0, x1 - x0, y1 - y0);
       ctx.font = "20px Arial";
       // ctx.fillStyle = color;
-      ctx.fillText(label, x0, y0 - 5);
+      // ctx.fillText(label, x0, y0 - 5);
+      console.log('translated_label:', translated_label)
+      console.log('label:', label)
+      const displayed_label = (translated_label == '--' || translated_label == 'N/A' ||translated_label == null)? label: translated_label;
+      ctx.fillText(translated_label + '--' + label, x0, y0 - 5);
 
       // fillrect with transparent color
       // ctx.fillStyle = color.replace(")", ", 0.2)").replace("rgb", "rgba");
