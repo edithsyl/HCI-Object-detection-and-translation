@@ -198,7 +198,7 @@ const WebcamComponent = (props: any) => {
             >
               Switch Camera
             </button>
-            <button
+            {/* <button
               onClick={() => {
                 reset();
                 props.changeModelResolution();
@@ -206,25 +206,25 @@ const WebcamComponent = (props: any) => {
               className="p-2  border-dashed border-2 rounded-xl hover:translate-y-1 "
             >
               Change Model
-            </button>
-            <button
+            </button> */}
+            {/* <button
               onClick={reset}
               className="p-2  border-dashed border-2 rounded-xl hover:translate-y-1 "
             >
               Reset
-            </button>
+            </button> */}
           </div>
         </div>
         <div>Using {props.modelName}</div>
         <div className="flex gap-3 flex-row flex-wrap justify-between items-center px-5 w-full">
-          <div>
+          {/* <div>
             {"Model Inference Time: " + inferenceTime.toFixed() + "ms"}
             <br />
             {"Total Time: " + totalTime.toFixed() + "ms"}
             <br />
             {"Overhead Time: +" + (totalTime - inferenceTime).toFixed(2) + "ms"}
-          </div>
-          <div>
+          </div>*/}
+          <div> 
             <div>
               {"Model FPS: " + (1000 / inferenceTime).toFixed(2) + "fps"}
             </div>

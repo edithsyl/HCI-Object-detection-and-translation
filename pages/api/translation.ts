@@ -50,8 +50,8 @@ export async function getTranslation(text: string, targetLang: string): Promise<
                     url: AWS_ENDPOINT,
                     data: reqBody,
             })
-            console.log('r: ', r);
-            return r.choices[0].message.content;
+            console.log('r: ', r.data);
+            return r.data.choices[0].message.content || 'na';
             // const response = await axios.post(
             //     AWS_ENDPOINT, //OPENAI_ENDPOINT, 
             //     reqBody,

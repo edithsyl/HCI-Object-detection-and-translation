@@ -21,6 +21,7 @@ const Yolo = (props: any) => {
   );
   const [modelName, setModelName] = useState<string>(RES_TO_MODEL[0][1]);
   const [session, setSession] = useState<any>(null);
+  let labelMap = new Map<string, string>();
 
   useEffect(() => {
     const getSession = async () => {
@@ -171,8 +172,20 @@ const Yolo = (props: any) => {
         yoloClasses[cls_id].toString().substring(1);
         // " " + score.toString() + "%"; // remove yolo percentage
 
-      const translated_label = await getTranslation(label, 'Chinese')
-
+      let translated_label = '-';
+      if(labelMap.has(label)){
+        translated_label = labelMap.get(label) || 'n/a';
+        console.log('has label')
+      }else{
+        console.log('new label')
+        translated_label = await getTranslation(label, 'Chinese');
+        console.log('translated_label: ', translated_label)
+        if(labelMap.size > 8){
+          const oldestLabel = labelMap.keys().next().value;
+          labelMap.delete(oldestLabel);
+        }
+        labelMap.set(label, translated_label)
+      }
       // const color = conf2color(score / 100); 
       const color = `rgba(0,0,0,0.9)`;
 
