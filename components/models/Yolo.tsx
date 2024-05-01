@@ -22,6 +22,7 @@ const Yolo = (props: any) => {
   const [modelName, setModelName] = useState<string>(RES_TO_MODEL[0][1]);
   const [session, setSession] = useState<any>(null);
   let labelMap = new Map<string, string>();
+  let latest_translate_req = '';
 
   useEffect(() => {
     const getSession = async () => {
@@ -175,13 +176,19 @@ const Yolo = (props: any) => {
       let translated_label = '-';
       if(labelMap.has(label)){
         translated_label = labelMap.get(label) || 'n/a';
-        console.log('has label')
+        console.log(label+' has already been translated')
       }else{
-        console.log('new label')
-        translated_label = await getTranslation(label, 'Chinese');
-        console.log('translated_label: ', translated_label)
+        console.log(label+' is a new label, ')
+        if(latest_translate_req !== label){
+          latest_translate_req = label;
+          translated_label = await getTranslation(label, 'Chinese');
+          console.log('translated_label: ', translated_label)
+        }else{
+          console.log(`translate req for ${label} is sent already`);
+        }
         if(labelMap.size > 8){
           const oldestLabel = labelMap.keys().next().value;
+          console.log('labelMap remove old ', oldestLabel)
           labelMap.delete(oldestLabel);
         }
         labelMap.set(label, translated_label)
@@ -195,9 +202,7 @@ const Yolo = (props: any) => {
       ctx.font = "20px Arial";
       // ctx.fillStyle = color;
       // ctx.fillText(label, x0, y0 - 5);
-      console.log('translated_label:', translated_label)
-      console.log('label:', label)
-      const displayed_label = (translated_label == '--' || translated_label == 'N/A' ||translated_label == null)? label: translated_label;
+      const displayed_label = (translated_label == '--' || translated_label == 'N/A' || translated_label == 'n/a' || translated_label == null)? label: label+' - '+translated_label;
       ctx.fillText(translated_label + '--' + label, x0, y0 - 5);
 
       // fillrect with transparent color

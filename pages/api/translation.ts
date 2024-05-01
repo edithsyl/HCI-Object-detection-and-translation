@@ -13,7 +13,7 @@ export async function getTranslation(text: string, targetLang: string): Promise<
             
 
             console.log('getTranslation run')
-            const prompt = `Please translate the following word or sentences into ${targetLang}: ${text}. Provide the answer only. Remove the '.' at the end. If you could not provide a translation due to inappropriate content or other reasons, please return 'N/A'.`
+            const prompt = `Please translate the following word or sentences into ${targetLang}: ${text}. Provide the answer only. Remove all punctuation. If you could not provide a translation due to inappropriate content or other reasons, please return 'N/A'.`
             const reqBody = {
                     messages:[
                         {role: "system", content: "You are a translating machine."},
