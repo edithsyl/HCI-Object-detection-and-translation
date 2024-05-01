@@ -7,7 +7,7 @@ import { yoloClasses } from "../../data/yolo_classes";
 import { useState } from "react";
 import { useEffect } from "react";
 import { runModelUtils } from "../../utils";
-import { getTranslation } from '../../api/translation';
+import { getTranslation } from '../../pages/api/translation';
 
 const RES_TO_MODEL: [number[], string][] = [
   [[256,256], "yolov7-tiny_256x256.onnx"],
