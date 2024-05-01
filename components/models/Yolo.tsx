@@ -203,7 +203,7 @@ const Yolo = (props: any) => {
       // ctx.fillStyle = color;
       // ctx.fillText(label, x0, y0 - 5);
       const displayed_label = (translated_label == '--' || translated_label == 'N/A' || translated_label == 'n/a' || translated_label == null)? label: label+' - '+translated_label;
-      ctx.fillText(translated_label + '--' + label, x0, y0 - 5);
+      ctx.fillText(displayed_label, x0, y0 - 5);
 
       // fillrect with transparent color
       // ctx.fillStyle = color.replace(")", ", 0.2)").replace("rgb", "rgba");
