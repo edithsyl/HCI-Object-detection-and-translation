@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "baseUrl": "types",
-    "types": ["dom-speech-recognition"],
+    // "types": ["dom-speech-recognition"],
     "typeRoots": ["types"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -18,6 +18,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js", "./node_modules/@types/dom-speech-recognition/index.d.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js"],
   "exclude": ["node_modules"]
 }

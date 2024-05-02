@@ -7,12 +7,11 @@ const VoiceRecognition = () => {
 
   // for fixing react-hydration-error (https://nextjs.org/docs/messages/react-hydration-error)
   const [isClient, setIsClient] = useState(false)
+  const [regStart, setRegStart] = useState(false)
 
   useEffect(() => {
     setIsClient(true)
   }, []);
-
-  
 
   const {
     isListening,
@@ -20,6 +19,24 @@ const VoiceRecognition = () => {
     startListening,
     stopListening,
     hasRecognitionSupport} = useSpeechRecognition();
+
+  const clickStartBut = (): void => {
+    if(regStart){
+      console.log('Recognition has already been started, stop clicking')
+    }else{
+      console.log('Start recognition...')
+      setRegStart(!regStart);
+      startListening();
+      return;
+    }
+  } 
+
+  const clickStopBut = (): void => {
+    console.log('Stop recognition...')
+    setRegStart(false);
+    stopListening();
+    return;
+  } 
 
   return <>{
       (isClient)?
@@ -29,13 +46,13 @@ const VoiceRecognition = () => {
             <div className="flex gap-1 flex-row flex-wrap justify-center items-center m-5">
               <div className="flex gap-1 justify-center items-center items-stretch">
                   <button 
-                    onClick={startListening}
+                    onClick={clickStartBut}
                     className="p-2  border-dashed border-2 rounded-xl hover:translate-y-1 "
                   >start</button>
               </div>
               <div className="flex gap-1 justify-center items-center items-stretch">
                   <button 
-                    onClick={stopListening}
+                    onClick={clickStopBut}
                     className="p-2  border-dashed border-2 rounded-xl hover:translate-y-1 "
                   >stop</button>
               </div>
