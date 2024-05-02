@@ -11,6 +11,8 @@ It is built using Next.js, ONNXRuntime, and YOLOv7 model.
   </video>
 </div> -->
 
+### deployed
+https://main.d1oms94am8cez.amplifyapp.com
 
 ## Getting Started
 How to run this project on your local machine for development and testing purposes.
