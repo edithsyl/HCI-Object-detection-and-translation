@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Yolo from "../components/models/Yolo";
-import { useEffect, useState } from "react";
+import VoiceRecognition from "../components/speech_recognition/speech_to_text";
 import dynamic from "next/dynamic";
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
       <main className="font-mono flex flex-col justify-center items-center  w-screen">
         <h1 className="m-5 text-xl font-bold">Real-Time Object Detection</h1>
         <Yolo />
+        <VoiceRecognition />
       </main>
     </>
   );

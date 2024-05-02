@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SpeechRecognition } from "@types/dom-speech-recognition"
+import { SpeechRecognition } from "../../../node_modules/@types/dom-speech-recognition"
 
 interface SpeechRecognitionProps {
   isListening: boolean;
