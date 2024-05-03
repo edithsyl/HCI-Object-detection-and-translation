@@ -7,14 +7,14 @@ frontend:
         - npm ci
     build:
       commands:
-        - NEXT_PUBLIC_ACCESS_KEY_AWS=$ACCESS_KEY_AWS 
-        - NEXT_PUBLIC_ENDPOINT_AWS=$ENDPOINT_AWS 
-        - NEXT_PUBLIC_PUBLIC_EC2_ADD=$PUBLIC_EC2_ADD 
-        - NEXT_PUBLIC_SECRET_KEY_AWS=$SECRET_KEY_AWS 
-        - NEXT_PUBLIC_OPENAI_ENDPOINT=$OPENAI_ENDPOINT
-        - NEXT_PUBLIC_OPENAI_API_KEY=$OPENAI_API_KEY 
-        # - env | grep -e ACCESS_KEY_AWS -e ENDPOINT_AWS -e PUBLIC_EC2_ADD -e SECRET_KEY_AWS -e SESSION_TOKEN_AWS >> .env.production
-        # - env | grep -e OPENAI_ >> .env.production
+        # - NEXT_PUBLIC_ACCESS_KEY_AWS=$ACCESS_KEY_AWS 
+        # - NEXT_PUBLIC_ENDPOINT_AWS=$ENDPOINT_AWS 
+        # - NEXT_PUBLIC_PUBLIC_EC2_ADD=$PUBLIC_EC2_ADD 
+        # - NEXT_PUBLIC_SECRET_KEY_AWS=$SECRET_KEY_AWS 
+        # - NEXT_PUBLIC_OPENAI_ENDPOINT=$OPENAI_ENDPOINT
+        # - NEXT_PUBLIC_OPENAI_API_KEY=$OPENAI_API_KEY 
+        - env | grep -e ACCESS_KEY_AWS -e ENDPOINT_AWS -e PUBLIC_EC2_ADD -e SECRET_KEY_AWS -e SESSION_TOKEN_AWS >> .env.production
+        - env | grep -e OPENAI_ >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
