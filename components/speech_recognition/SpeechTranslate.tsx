@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-
+import { SpeechRecognition } from 'dom-speech-recognition';
 import { default as languageCodesData } from '../../data/language-codes.json';
 import { default as countryCodesData } from '../../data/country-codes.json';
 import { getTranslation } from '../../pages/api/translation';
