@@ -18,6 +18,9 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js"],
+  "ts-node": {
+    "files": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js", "environment.d.ts"],
   "exclude": ["node_modules"]
 }

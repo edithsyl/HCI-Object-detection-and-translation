@@ -1,7 +1,7 @@
 const axios = require('axios');
 const aws4 = require('aws4')
-// const dotenv = require('dotenv');
-// dotenv.config()
+const dotenv = require('dotenv');
+dotenv.config()
 
 // import { OPENAI_API_KEY, OPENAI_ENDPOINT, ENDPOINT_AWS, ACCESS_KEY_AWS, SECRET_KEY_AWS, SESSION_TOKEN_AWS } from '../../config';
 
@@ -10,9 +10,7 @@ const aws4 = require('aws4')
 
 export async function getTranslation(text: string, targetLang: string): Promise<string>{
     try {
-            
-
-            console.log('getTranslation run')
+            console.log('getTranslation run: ', process.env["ENDPOINT_AWS"])
             const prompt = `Please translate the following word or sentences into ${targetLang}: ${text}. Provide the answer only. Remove all punctuation. If you could not provide a translation due to inappropriate content or other reasons, please return 'N/A'.`
             const reqBody = {
                     messages:[
