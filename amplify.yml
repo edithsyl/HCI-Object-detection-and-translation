@@ -13,8 +13,8 @@ frontend:
         # - NEXT_PUBLIC_SECRET_KEY_AWS=$SECRET_KEY_AWS 
         # - NEXT_PUBLIC_OPENAI_ENDPOINT=$OPENAI_ENDPOINT
         # - NEXT_PUBLIC_OPENAI_API_KEY=$OPENAI_API_KEY 
-        - env | grep -e ACCESS_KEY_AWS -e ENDPOINT_AWS -e PUBLIC_EC2_ADD -e SECRET_KEY_AWS -e SESSION_TOKEN_AWS >> .env.production
-        - env | grep -e OPENAI_ >> .env.production
+        - env | grep -e NEXT_PUBLIC_ACCESS_KEY_AWS -e NEXT_PUBLIC_ENDPOINT_AWS -e NEXT_PUBLIC_PUBLIC_EC2_ADD -e NEXT_PUBLIC_SECRET_KEY_AWS -e NEXT_PUBLIC_SESSION_TOKEN_AWS >> .env.production
+        - env | grep -e NEXT_PUBLIC_OPENAI_ >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
