@@ -21,6 +21,6 @@
   "ts-node": {
     "files": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js", "environment.d.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js"], //, "environment.d.ts"
   "exclude": ["node_modules"]
 }

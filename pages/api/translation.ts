@@ -1,6 +1,8 @@
 const axios = require('axios');
 const aws4 = require('aws4')
-// const dotenv = require('dotenv');
+const dotenv = require('dotenv')
+dotenv.config()
+// require('@next/env').loadEnvConfig('./');
 // dotenv.config({ path: __dirname+'/.env.local' })
 
 // import { OPENAI_API_KEY, OPENAI_ENDPOINT, ENDPOINT_AWS, ACCESS_KEY_AWS, SECRET_KEY_AWS, SESSION_TOKEN_AWS } from '../../config';
@@ -10,7 +12,7 @@ const aws4 = require('aws4')
 
 export async function getTranslation(text: string, targetLang: string): Promise<string>{
     try {
-            console.log('getTranslation run: ', process.env.ENDPOINT_AWS)
+            console.log('getTranslation run: ', process.env.NEXT_PUBLIC_ENDPOINT_AWS)
             console.log('local: ', process.env.local)
             const prompt = `Please translate the following word or sentences into ${targetLang}: ${text}. Provide the answer only. Remove all punctuation. If you could not provide a translation due to inappropriate content or other reasons, please return 'N/A'.`
             const reqBody = {
@@ -27,7 +29,7 @@ export async function getTranslation(text: string, targetLang: string): Promise<
                 path: '/openai-dev/myHttpProxy', 
                 region: 'us-esat-1',
                 // url: ENDPOINT_AWS,
-                url: process.env.ENDPOINT_AWS,
+                url: process.env.NEXT_PUBLIC_ENDPOINT_AWS,
                 headers:  {
                     'Content-Type': 'application/json',
                 },
@@ -37,14 +39,14 @@ export async function getTranslation(text: string, targetLang: string): Promise<
             // aws4.sign() will sign and modify these options, ready to pass to http.request
             let signed = aws4.sign(request,
                 {
-                secretAccessKey: process.env.SECRET_KEY_AWS,
-                accessKeyId: process.env.ACCESS_KEY_AWS,
-                sessionToken:process.env.SESSION_TOKEN_AWS
+                secretAccessKey: process.env.NEXT_PUBLIC_SECRET_KEY_AWS,
+                accessKeyId: process.env.NEXT_PUBLIC_ACCESS_KEY_AWS,
+                sessionToken:process.env.NEXT_PUBLIC_SESSION_TOKEN_AWS
                 })
             
             const r = await axios({
                     ...signed,
-                    url: process.env.ENDPOINT_AWS,
+                    url: process.env.NEXT_PUBLIC_ENDPOINT_AWS,
                     data: reqBody,
             })
             console.log('r: ', r.data);
