@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 
 import { default as languageCodesData } from '../../data/language-codes.json';
 import { default as countryCodesData } from '../../data/country-codes.json';
+import { getTranslation } from '../../pages/api/translation';
 
 const languageCodes: Record<string, string> = languageCodesData;
 const countryCodes: Record<string, string> = countryCodesData;
@@ -75,20 +76,16 @@ const SpeechTranslator = () => {
 
     recognitionRef.current.onresult = async function(event) {
       const transcript = event.results[0][0].transcript;
-      console.log('transcript: ', transcript)
+      let translated_transcript = null;
+      console.log('transcript: ', transcript);
       setText(transcript);
       
-      // const results = await fetch('/api/translate', {
-      //   method: 'POST',
-      //   body: JSON.stringify({
-      //     text: transcript,
-      //     language: 'pt-BR'
-      //   })
-      // }).then(r => r.json());
-
-      // setTranslation(results.text);
-
-      // speak(results.text);
+      if(transcript!= null && transcript.length > 0){
+        translated_transcript = await getTranslation(transcript, 'Chinese');
+        console.log('translated_transcript: ', translated_transcript)
+        setTranslation(translated_transcript)
+        speak(translated_transcript);
+      }
     }
 
     recognitionRef.current.start();
