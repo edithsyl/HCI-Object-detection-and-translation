@@ -10372,7 +10372,7 @@ onnxruntime-common@1.17.3:
   resolved "https://registry.npmjs.org/onnxruntime-common/-/onnxruntime-common-1.17.3.tgz"
   integrity sha512-IkbaDelNVX8cBfHFgsNADRIq2TlXMFWW+nG55mwWvQT4i0NZb32Jf35Pf6h9yjrnK78RjcnlNYaI37w394ovMw==
 
-onnxruntime-web@^1.13.1:
+onnxruntime-web@^1.17.3:
   version "1.17.3"
   resolved "https://registry.npmjs.org/onnxruntime-web/-/onnxruntime-web-1.17.3.tgz"
   integrity sha512-MSDrNUWgc1biP0YzY488OJ9n/jTMS9EXysgm9Aw4CUj2A836ALbO2J1sgzguWJeVUHTlM6p7tRzo8IGAgaXWKw==
