@@ -1,7 +1,7 @@
 const axios = require('axios');
 const aws4 = require('aws4')
-const dotenv = require('dotenv');
-dotenv.config()
+// const dotenv = require('dotenv');
+// dotenv.config({ path: __dirname+'/.env.local' })
 
 // import { OPENAI_API_KEY, OPENAI_ENDPOINT, ENDPOINT_AWS, ACCESS_KEY_AWS, SECRET_KEY_AWS, SESSION_TOKEN_AWS } from '../../config';
 
