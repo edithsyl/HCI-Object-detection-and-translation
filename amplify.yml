@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - yarn install --frozen-lockfile
+    build:
+      commands:
+        - env | grep -e ACCESS_KEY_AWS -e ENDPOINT_AWS -e PUBLIC_EC2_ADD -e SECRET_KEY_AWS -e SESSION_TOKEN_AWS >> .env.production
+        - env | grep -e OPENAI_ >> .env.production
+        - yarn run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .next/cache/**/*
+      - node_modules/**/*

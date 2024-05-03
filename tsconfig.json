@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "target": "es6",
+    "baseUrl": "types",
+    // "types": ["dom-speech-recognition"],
+    "typeRoots": ["types"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
