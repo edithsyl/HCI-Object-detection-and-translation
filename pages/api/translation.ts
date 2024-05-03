@@ -10,7 +10,8 @@ dotenv.config()
 
 export async function getTranslation(text: string, targetLang: string): Promise<string>{
     try {
-            console.log('getTranslation run: ', process.env["ENDPOINT_AWS"])
+            console.log('getTranslation run: ', process.env.ENDPOINT_AWS)
+            console.log('local: ', process.env.local)
             const prompt = `Please translate the following word or sentences into ${targetLang}: ${text}. Provide the answer only. Remove all punctuation. If you could not provide a translation due to inappropriate content or other reasons, please return 'N/A'.`
             const reqBody = {
                     messages:[
