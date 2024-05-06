@@ -68,10 +68,12 @@ This project is deployed using AWS Amplify for public access.
 - [Next.js](https://nextjs.org/) - A JavaScript framework for building server-rendered React applications.
 - [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) - A progressive web app that can be installed on a user's device and run offline, providing a native-like experience.
 
+
 ## Acknowledgement
-[@juanjaho](https://github.com/juanjaho) - original work by Juan Sebastian
-[@WongKinYiu](https://github.com/WongKinYiu) for creating such an amazing [YOLOv7](https://github.com/WongKinYiu/yolov7) model.
-[ONNXRuntime Web Demo](https://github.com/microsoft/onnxruntime-web-demo) on how to use ONNXRuntime in a web application.
+This project is built based on the following two repos: 
+
+[@juanjaho](https://github.com/juanjaho) - Object Detection Web App by Juan Sebastian
+[@colbyfayock](https://github.com/colbyfayock/my-translator-app) -  AI Translator by Colby Fayock
 
 
 ## Citation for YOLOv7
