@@ -218,8 +218,8 @@ const Yolo = (props: any) => {
 
   return (
     <div className="grid sm:grid-rows-2 gap-2 max-h-lg bg-zinc-900 rounded-lg p-5 mx-auto">
-      <form className="h-100">
-        <div className="h-100">
+      <form>
+        <div>
           <label className="block text-zinc-500 text-[.6rem] uppercase font-bold mb-1">Language</label>
           <select className="w-400 text-[.7rem] rounded-sm bg-zinc-700 border-zinc-300 px-2 py-1 pr-7" name="language" value={language} onChange={(event) => {
             setLanguage(event.currentTarget.value);

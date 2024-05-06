@@ -166,9 +166,9 @@ const WebcamComponent = (props: any) => {
                 await processImage();
                 setTotalTime(Date.now() - startTime);
               }}
-              className="p-2 border-dashed border-2 rounded-xl hover:translate-y-1 "
+              className="p-2 font-semibold text-sm border border-zinc-300 rounded-xl hover:translate-y-1 "
             >
-              Capture Photo
+              CAPTURE PHOTO
             </button>
             <button
               onClick={async () => {
@@ -180,12 +180,12 @@ const WebcamComponent = (props: any) => {
               }}
               //on hover, shift the button up
               className={`
-              p-2  border-dashed border-2 rounded-xl hover:translate-y-1 
+              p-2 font-semibold text-sm border border-zinc-300 rounded-xl hover:translate-y-1 
               ${liveDetection.current ? "bg-white text-black" : ""}
               
               `}
             >
-              Live Detection
+              LIVE DETECTION
             </button>
           </div>
           <div className="flex gap-1 justify-center items-center items-stretch">
@@ -194,9 +194,9 @@ const WebcamComponent = (props: any) => {
                 reset();
                 setFacingMode(facingMode === "user" ? "environment" : "user");
               }}
-              className="p-2  border-dashed border-2 rounded-xl hover:translate-y-1 "
+              className="p-2 font-semibold text-sm border border-zinc-300 rounded-xl hover:translate-y-1 "
             >
-              Switch Camera
+              SWITCH CAMERA
             </button>
             {/* <button
               onClick={() => {
