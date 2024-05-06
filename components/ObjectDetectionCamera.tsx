@@ -189,7 +189,7 @@ const WebcamComponent = (props: any) => {
             </button>
           </div>
           <div className="flex gap-1 justify-center items-center items-stretch">
-            <button
+{/*             <button
               onClick={() => {
                 reset();
                 setFacingMode(facingMode === "user" ? "environment" : "user");
@@ -197,7 +197,7 @@ const WebcamComponent = (props: any) => {
               className="p-2 font-semibold text-sm border border-zinc-300 rounded-xl hover:translate-y-1 "
             >
               SWITCH CAMERA
-            </button>
+            </button> */}
             {/* <button
               onClick={() => {
                 reset();
