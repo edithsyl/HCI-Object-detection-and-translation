@@ -34,15 +34,15 @@ yarn install
 2. Set up .env.local on root:
 <img width="251" alt="Screenshot 2024-05-06 at 10 13 25 AM" src="https://github.com/edithsyl/HCI-Object-detection-and-translation/assets/69338737/b9ac6678-3932-42fe-a055-268e73a83932">
 
-
-4. Start the development server by running:
+3. Start the development server by running:
 ```
 npm run dev
 # or
 yarn dev
 ```
 
-5. Open your web browser and navigate to http://localhost:3000 to view the application.
+4. Open your web browser and navigate to http://localhost:3000 to view the application.
+5. 
 
 ### Installation as PWA
 
@@ -52,11 +52,13 @@ This app can also be installed on your device (desktop or mobile) as a progressi
 2. Look for the "Install" or "Add to Homescreen" button in the browser's interface. 
 3. Click the button and follow the prompts to install the app.
 4. The app will now be installed on your device and can be launched from the homescreen like any other app.
+5. 
 
 ### Deployment
-This project is now deployed using AWS Amplify for public access. 
-How to use AWS Amplify: https://aws.amazon.com/amplify/?gclid=CjwKCAjw3NyxBhBmEiwAyofDYTE252GKzQWQi-HPyW-3MtFZUQQPCIZRDOXGnUszq4A1qx3wvSSQChoC-QkQAvD_BwE&trk=b845ae09-4d10-4f92-a039-7c89dcf49eaf&sc_channel=ps&ef_id=CjwKCAjw3NyxBhBmEiwAyofDYTE252GKzQWQi-HPyW-3MtFZUQQPCIZRDOXGnUszq4A1qx3wvSSQChoC-QkQAvD_BwE:G:s&s_kwcid=AL!4422!3!647258095134!p!!g!!amplify%20framework!19621370789!149166972881
-How to deploy a Next.js application: [documentation](https://nextjs.org/docs/deployment/)
+This project is deployed using AWS Amplify for public access. 
+
+- [How to use AWS Amplify](https://aws.amazon.com/amplify/?gclid=CjwKCAjw3NyxBhBmEiwAyofDYTE252GKzQWQi-HPyW-3MtFZUQQPCIZRDOXGnUszq4A1qx3wvSSQChoC-QkQAvD_BwE&trk=b845ae09-4d10-4f92-a039-7c89dcf49eaf&sc_channel=ps&ef_id=CjwKCAjw3NyxBhBmEiwAyofDYTE252GKzQWQi-HPyW-3MtFZUQQPCIZRDOXGnUszq4A1qx3wvSSQChoC-QkQAvD_BwE:G:s&s_kwcid=AL!4422!3!647258095134!p!!g!!amplify%20framework!19621370789!149166972881)
+- [How to deploy a Next.js application](https://nextjs.org/docs/deployment/)
 
 
 
