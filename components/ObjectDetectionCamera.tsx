@@ -224,7 +224,7 @@ const WebcamComponent = (props: any) => {
             <br />
             {"Overhead Time: +" + (totalTime - inferenceTime).toFixed(2) + "ms"}
           </div>*/}
-          <div> 
+          {/* <div> 
             <div>
               {"Model FPS: " + (1000 / inferenceTime).toFixed(2) + "fps"}
             </div>
@@ -234,7 +234,7 @@ const WebcamComponent = (props: any) => {
                 (1000 * (1 / totalTime - 1 / inferenceTime)).toFixed(2) +
                 "fps"}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import { SpeechRecognition } from 'dom-speech-recognition'
 import { default as languageCodesData } from '../../data/language-codes.json';
 import { default as countryCodesData } from '../../data/country-codes.json';
 import { getTranslation } from '../../pages/api/translation';
@@ -25,12 +24,23 @@ const SpeechTranslator = () => {
       const split = lang.split('-');
       const languageCode: string = split[0];
       const countryCode: string = split[1];
-      return {
-        lang,
-        label: languageCodes[languageCode] || lang,
-        dialect: countryCodes[countryCode]
+      if(languageCodes[languageCode] != undefined && languageCodes[languageCode] != null
+        && countryCodes[countryCode] != undefined && countryCodes[countryCode] != null
+      ){
+        return {
+          lang,
+          label: languageCodes[languageCode] || lang,
+          dialect: countryCodes[countryCode]
+        }
+      }else{
+        return {
+          lang,
+          label: 'remove',
+          dialect: countryCodes[countryCode]
+        }
       }
     })
+    .filter((a, b) =>  a.label != 'remove')
     .sort((a, b) => a.label.localeCompare(b.label));
   const activeLanguage = availableLanguages.find(({ lang }) => language === lang);
 
@@ -103,9 +113,8 @@ const SpeechTranslator = () => {
 
   return (
     <div className="mt-12 px-4">
-
       <div className="max-w-lg rounded-xl overflow-hidden mx-auto">
-        <div className="bg-zinc-200 p-4 border-b-4 border-zinc-300">
+        <div className="bg-zinc-900 p-4 border-b-4 border-zinc-900">
           <div className="bg-blue-200 rounded-lg p-2 border-2 border-blue-300">
             <ul className="font-mono font-bold text-blue-900 uppercase px-4 py-2 border border-blue-800 rounded">
               <li>
@@ -130,11 +139,11 @@ const SpeechTranslator = () => {
         </div>
 
         <div className="bg-zinc-800 p-4">
-          <div className="grid sm:grid-cols-2 gap-4 max-w-lg bg-zinc-200 rounded-lg p-5 mx-auto">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-lg bg-zinc-900 rounded-lg p-5 mx-auto">
             <form>
               <div>
                 <label className="block text-zinc-500 text-[.6rem] uppercase font-bold mb-1">Language</label>
-                <select className="w-full text-[.7rem] rounded-sm border-zinc-300 px-2 py-1 pr-7" name="language" value={language} onChange={(event) => {
+                <select className="w-full text-[.7rem] rounded-sm border-zinc-300 bg-zinc-700 px-2 py-1 pr-7" name="language" value={language} onChange={(event) => {
                   setLanguage(event.currentTarget.value);
                 }}>
                   {availableLanguages.map(({ lang, label }) => {

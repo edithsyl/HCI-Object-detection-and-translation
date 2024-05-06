@@ -1,6 +1,6 @@
 import ndarray from "ndarray";
 import { Tensor } from "onnxruntime-web";
-import ops from "ndarray-ops";
+import ops, { div } from "ndarray-ops";
 import ObjectDetectionCamera from "../ObjectDetectionCamera";
 import { round } from "lodash";
 import { yoloClasses } from "../../data/yolo_classes";
@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { runModelUtils } from "../../utils";
 import { getTranslation } from '../../pages/api/translation';
+import { default as languageCodesData } from '../../data/language-codes.json';
 
 const RES_TO_MODEL: [number[], string][] = [
   [[256,256], "yolov7-tiny_256x256.onnx"],
@@ -15,12 +16,16 @@ const RES_TO_MODEL: [number[], string][] = [
   [[640, 640], "yolov7-tiny_640x640.onnx"],
 ];
 
+const languageCodes: Record<string, string> = languageCodesData;
+
 const Yolo = (props: any) => {
   const [modelResolution, setModelResolution] = useState<number[]>(
     RES_TO_MODEL[0][0]
   );
   const [modelName, setModelName] = useState<string>(RES_TO_MODEL[0][1]);
   const [session, setSession] = useState<any>(null);
+  const [language, setLanguage] = useState<string>('Chinese')
+
   let labelMap = new Map<string, string>();
   let latest_translate_req = '';
 
@@ -181,7 +186,7 @@ const Yolo = (props: any) => {
         console.log(label+' is a new label, ')
         if(latest_translate_req !== label){
           latest_translate_req = label;
-          translated_label = await getTranslation(label, 'Chinese');
+          translated_label = await getTranslation(label, language);
           console.log('translated_label: ', translated_label)
         }else{
           console.log(`translate req for ${label} is sent already`);
@@ -212,16 +217,35 @@ const Yolo = (props: any) => {
   };
 
   return (
-    <ObjectDetectionCamera
-      width={props.width}
-      height={props.height}
-      preprocess={preprocess}
-      postprocess={postprocess}
-      resizeCanvasCtx={resizeCanvasCtx}
-      session={session}
-      changeModelResolution={changeModelResolution}
-      modelName={modelName}
-    />
+    <div className="grid sm:grid-rows-2 gap-2 max-h-lg bg-zinc-900 rounded-lg p-5 mx-auto">
+      <form className="h-100">
+        <div className="h-100">
+          <label className="block text-zinc-500 text-[.6rem] uppercase font-bold mb-1">Language</label>
+          <select className="w-400 text-[.7rem] rounded-sm bg-zinc-700 border-zinc-300 px-2 py-1 pr-7" name="language" value={language} onChange={(event) => {
+            setLanguage(event.currentTarget.value);
+          }}>
+            {Object.entries(languageCodes).map(([key, value]) => {
+              return (
+                <option key={value} value={value}>
+                  { key } ({ value })
+                </option>
+              )
+            })}
+          </select>
+        </div>
+      </form>
+      <ObjectDetectionCamera
+        width={props.width}
+        height={props.height}
+        preprocess={preprocess}
+        postprocess={postprocess}
+        resizeCanvasCtx={resizeCanvasCtx}
+        session={session}
+        changeModelResolution={changeModelResolution}
+        modelName={modelName}
+        targLang={language}
+      />
+    </div>
   );
 };
 
