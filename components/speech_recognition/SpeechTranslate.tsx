@@ -91,7 +91,7 @@ const SpeechTranslator = () => {
       setText(transcript);
       
       if(transcript!= null && transcript.length > 0){
-        translated_transcript = await getTranslation(transcript, 'Chinese');
+        translated_transcript = await getTranslation(transcript, language);
         console.log('translated_transcript: ', translated_transcript)
         setTranslation(translated_transcript)
         speak(translated_transcript);
