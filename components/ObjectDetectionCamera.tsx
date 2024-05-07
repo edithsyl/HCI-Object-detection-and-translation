@@ -168,7 +168,7 @@ const WebcamComponent = (props: any) => {
               }}
               className="p-2 font-semibold text-sm border border-zinc-300 rounded-xl hover:translate-y-1 "
             >
-              CAPTURE PHOTO
+              STOP
             </button>
             <button
               onClick={async () => {
