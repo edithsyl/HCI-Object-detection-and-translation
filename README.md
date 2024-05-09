@@ -1,7 +1,10 @@
-# Real-time Object Detection & Translation Web App
+# Real-time Object Detection & Translation Web App for TravelAR
+XR Project for COMP4461 Human Computer Interaction Spring 24
 Authors: Tiffany Fu, Nicole Lucas, Sherie Lam, Edith Leung
 
-This is a web app that could detect& identify object and provide translation in real-time. 
+<img width="787" alt="Screenshot 2024-05-09 at 1 34 16 PM" src="https://github.com/tiffanyfu7/HCI-Object-Detection-and-Translation/assets/71473099/dd5f3866-15e9-474e-b767-659759cfa46e">
+
+This is a web app that could detect & identify object and provide translation in real-time. 
 It is built using Next.js, ONNXRuntime, and YOLOv7 model.
 
 <!-- ## Demo at [RTOD.vercel.app](https://rtod.vercel.app)
@@ -14,7 +17,10 @@ It is built using Next.js, ONNXRuntime, and YOLOv7 model.
 ### deployed
 https://main.d1oms94am8cez.amplifyapp.com
 
-## Getting Started
+### video paper
+https://www.youtube.com/watch?v=otRh5jk1fiw&t=10s
+
+## 1. Getting Started
 How to run this project on your local machine for development and testing purposes.
 
 ### Prerequisites
@@ -60,9 +66,7 @@ This project is deployed using AWS Amplify for public access.
 - [How to use AWS Amplify](https://aws.amazon.com/amplify/?gclid=CjwKCAjw3NyxBhBmEiwAyofDYTE252GKzQWQi-HPyW-3MtFZUQQPCIZRDOXGnUszq4A1qx3wvSSQChoC-QkQAvD_BwE&trk=b845ae09-4d10-4f92-a039-7c89dcf49eaf&sc_channel=ps&ef_id=CjwKCAjw3NyxBhBmEiwAyofDYTE252GKzQWQi-HPyW-3MtFZUQQPCIZRDOXGnUszq4A1qx3wvSSQChoC-QkQAvD_BwE:G:s&s_kwcid=AL!4422!3!647258095134!p!!g!!amplify%20framework!19621370789!149166972881)
 - [How to deploy a Next.js application](https://nextjs.org/docs/deployment/)
 
-
-
-## Built With
+## 2. Built With
 - [ONNXRuntime](https://onnxruntime.ai/) - An open-source project for running inferences using pre-trained models in a variety of formats.
 - [YOLOv7](https://github.com/WongKinYiu/yolov7) - A Object detection model which is used in this project.
 - [Next.js](https://nextjs.org/) - A JavaScript framework for building server-rendered React applications.
