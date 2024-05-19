@@ -16,8 +16,7 @@ It is built using Next.js, ONNXRuntime, and YOLOv7 model.
 
 ### deployed
 https://main.d1oms94am8cez.amplifyapp.com
-![proj3-pof](https://github.com/edithsyl/TravelAR-Speech-Object-Detection-Translation-Web-App/assets/69338737/6022368e-5f2d-43e1-9a82-ced62d7e5f85)
-
+<img width="350" alt="Screenshot 2024-05-09 at 1 34 16 PM" src="https://github.com/edithsyl/TravelAR-Speech-Object-Detection-Translation-Web-App/assets/69338737/6022368e-5f2d-43e1-9a82-ced62d7e5f85">
 
 ### video paper
 https://www.youtube.com/watch?v=otRh5jk1fiw&t=10s
