@@ -16,9 +16,14 @@ It is built using Next.js, ONNXRuntime, and YOLOv7 model.
 
 ### deployed
 https://main.d1oms94am8cez.amplifyapp.com
+![proj3-pof](https://github.com/edithsyl/TravelAR-Speech-Object-Detection-Translation-Web-App/assets/69338737/6022368e-5f2d-43e1-9a82-ced62d7e5f85)
+
 
 ### video paper
 https://www.youtube.com/watch?v=otRh5jk1fiw&t=10s
+
+
+
 
 ## 1. Getting Started
 How to run this project on your local machine for development and testing purposes.
@@ -58,7 +63,7 @@ This app can also be installed on your device (desktop or mobile) as a progressi
 2. Look for the "Install" or "Add to Homescreen" button in the browser's interface. 
 3. Click the button and follow the prompts to install the app.
 4. The app will now be installed on your device and can be launched from the homescreen like any other app.
-5. 
+
 
 ### Deployment
 This project is deployed using AWS Amplify for public access. 
